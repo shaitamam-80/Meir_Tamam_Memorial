@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Assistant', system-ui, sans-serif;
+  --font-heading: 'Heebo', var(--font-sans);
+
+  /* Primary - Navy */
+  --color-primary: oklch(0.25 0.05 250);
+  --color-primary-foreground: oklch(0.98 0.01 80);
+
+  /* Background - Cream */
+  --color-background: oklch(0.98 0.01 80);
+  --color-foreground: oklch(0.25 0.05 250);
+
+  /* Surface */
+  --color-surface: oklch(0.95 0.01 80);
+  --color-surface-foreground: oklch(0.25 0.05 250);
+
+  /* Accent - Muted Gold (DECORATIVE ONLY - never for text) */
+  --color-accent: oklch(0.65 0.1 70);
+  --color-accent-foreground: oklch(0.2 0.05 250);
+
+  /* Border and Input */
+  --color-border: oklch(0.88 0.02 250);
+  --color-input: oklch(0.88 0.02 250);
+  --color-ring: oklch(0.25 0.05 250);
+
+  /* Semantic colors */
+  --color-success: oklch(0.6 0.15 145);
+  --color-warning: oklch(0.75 0.15 70);
+  --color-destructive: oklch(0.55 0.2 25);
+  --color-destructive-foreground: oklch(0.98 0.01 80);
+
+  /* Muted */
+  --color-muted: oklch(0.92 0.01 250);
+  --color-muted-foreground: oklch(0.45 0.02 250);
+
+  /* Card */
+  --color-card: oklch(0.99 0.005 80);
+  --color-card-foreground: oklch(0.25 0.05 250);
+
+  /* Popover */
+  --color-popover: oklch(0.99 0.005 80);
+  --color-popover-foreground: oklch(0.25 0.05 250);
+
+  /* Secondary */
+  --color-secondary: oklch(0.92 0.01 250);
+  --color-secondary-foreground: oklch(0.25 0.05 250);
+
+  /* Border radius */
+  --radius-lg: 0.75rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.3rem;
+}
+
+/* Dark mode (optional for future) */
+.dark {
+  --color-background: oklch(0.2 0.03 250);
+  --color-foreground: oklch(0.92 0.01 80);
+  --color-surface: oklch(0.25 0.03 250);
+  --color-border: oklch(0.3 0.03 250);
+  --color-card: oklch(0.22 0.03 250);
+  --color-card-foreground: oklch(0.92 0.01 80);
+  --color-popover: oklch(0.22 0.03 250);
+  --color-popover-foreground: oklch(0.92 0.01 80);
+  --color-muted: oklch(0.28 0.02 250);
+  --color-muted-foreground: oklch(0.65 0.01 250);
+}
+
+/* Base styles */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+/* Utilities for RTL logical properties */
+@layer utilities {
+  /* Shadow that works in RTL */
+  .shadow-start {
+    box-shadow: calc(-1 * 4px) 4px 6px -1px rgb(0 0 0 / 0.1);
+  }
+
+  .shadow-end {
+    box-shadow: 4px 4px 6px -1px rgb(0 0 0 / 0.1);
+  }
+}
