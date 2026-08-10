@@ -78,7 +78,11 @@ pre-optimized (squoosh.app, 1200px max), paths relative to public/ resolved
 via `asset()` from `src/lib/assets.ts`.
 
 ## Deployment
-- Push to `main` → GitHub Actions builds and deploys to GitHub Pages
-- One-time repo setup: Settings → Pages → Source → GitHub Actions
-- Live URL: https://<user>.github.io/Meir_Tamam_Memorial/ (QR code target)
+Two supported targets (both work from the same code; QR points at whichever is live):
+- **GitHub Pages**: push to `main` → GitHub Actions deploys.
+  One-time setup: Settings → Pages → Source → GitHub Actions.
+  URL: https://<user>.github.io/Meir_Tamam_Memorial/
+- **Vercel**: import the repo at vercel.com → auto-deploys on every push.
+  Vercel sets the VERCEL env var, so vite.config.ts switches base to `/`;
+  vercel.json handles the SPA rewrite. Custom domain configurable in Vercel.
 ```

@@ -4,8 +4,9 @@ import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import path from 'path'
 
-// GitHub Pages serves the site from /<repo-name>/
-const BASE = '/Meir_Tamam_Memorial/'
+// GitHub Pages serves the site from /<repo-name>/; Vercel serves from the root.
+// Vercel sets the VERCEL env var automatically during its builds.
+const BASE = process.env.VERCEL ? '/' : '/Meir_Tamam_Memorial/'
 
 // https://vite.dev/config/
 export default defineConfig({
