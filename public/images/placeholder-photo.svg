@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="Assistant, Arial, sans-serif">
-  <rect width="800" height="600" fill="#f5f1e8"/>
-  <rect x="16" y="16" width="768" height="568" fill="none" stroke="#c9a962" stroke-width="3"/>
-  <g stroke="#1e2b4b" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.35">
+  <rect width="800" height="600" fill="#162138"/>
+  <rect x="16" y="16" width="768" height="568" fill="none" stroke="#c5a059" stroke-width="3"/>
+  <g stroke="#e5c39e" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.4">
     <rect x="330" y="250" width="140" height="100" rx="12"/>
     <circle cx="400" cy="300" r="28"/>
     <path d="M360 250 L375 228 H425 L440 250"/>
   </g>
-  <text x="400" y="420" text-anchor="middle" font-size="30" fill="#1e2b4b" opacity="0.6">כאן תבוא תמונה</text>
-  <text x="400" y="460" text-anchor="middle" font-size="22" fill="#1e2b4b" opacity="0.4">החליפו את הקובץ לפי המדריך CONTENT_GUIDE.md</text>
+  <text x="400" y="420" text-anchor="middle" font-size="30" fill="#e5c39e" opacity="0.8">כאן תבוא תמונה</text>
+  <text x="400" y="460" text-anchor="middle" font-size="22" fill="#e5c39e" opacity="0.5">החליפו את הקובץ לפי המדריך CONTENT_GUIDE.md</text>
 </svg>

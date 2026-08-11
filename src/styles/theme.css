@@ -1,70 +1,63 @@
 @import "tailwindcss";
 
+/*
+ * Family-approved palette (deep navy / matte gold / sahara):
+ *   Background:  #0F172A  deep navy
+ *   Accent:      #C5A059  matte gold (readable on navy, unlike gold-on-cream)
+ *   Secondary:   #E5C39E  sahara — muted/secondary text
+ *   Body text:   warm ivory for maximum contrast on navy
+ */
 @theme {
   --font-sans: 'Assistant', system-ui, sans-serif;
   --font-heading: 'Heebo', var(--font-sans);
 
-  /* Primary - Navy */
-  --color-primary: oklch(0.25 0.05 250);
-  --color-primary-foreground: oklch(0.98 0.01 80);
+  /* Primary - Matte Gold (headings, links, emphasis on navy) */
+  --color-primary: #c5a059;
+  --color-primary-foreground: #0f172a;
 
-  /* Background - Cream */
-  --color-background: oklch(0.98 0.01 80);
-  --color-foreground: oklch(0.25 0.05 250);
+  /* Background - Deep Navy */
+  --color-background: #0f172a;
+  --color-foreground: #f1e7d6;
 
-  /* Surface */
-  --color-surface: oklch(0.95 0.01 80);
-  --color-surface-foreground: oklch(0.25 0.05 250);
+  /* Surface - slightly lighter navy */
+  --color-surface: #1a2438;
+  --color-surface-foreground: #f1e7d6;
 
-  /* Accent - Muted Gold (DECORATIVE ONLY - never for text) */
-  --color-accent: oklch(0.65 0.1 70);
-  --color-accent-foreground: oklch(0.2 0.05 250);
+  /* Accent - Matte Gold */
+  --color-accent: #c5a059;
+  --color-accent-foreground: #0f172a;
 
   /* Border and Input */
-  --color-border: oklch(0.88 0.02 250);
-  --color-input: oklch(0.88 0.02 250);
-  --color-ring: oklch(0.25 0.05 250);
+  --color-border: #2b3a58;
+  --color-input: #2b3a58;
+  --color-ring: #c5a059;
 
   /* Semantic colors */
-  --color-success: oklch(0.6 0.15 145);
-  --color-warning: oklch(0.75 0.15 70);
-  --color-destructive: oklch(0.55 0.2 25);
-  --color-destructive-foreground: oklch(0.98 0.01 80);
+  --color-success: oklch(0.7 0.13 145);
+  --color-warning: oklch(0.78 0.13 70);
+  --color-destructive: oklch(0.62 0.18 25);
+  --color-destructive-foreground: #f1e7d6;
 
-  /* Muted */
-  --color-muted: oklch(0.92 0.01 250);
-  --color-muted-foreground: oklch(0.45 0.02 250);
+  /* Muted - Sahara for secondary text */
+  --color-muted: #22304c;
+  --color-muted-foreground: #e5c39e;
 
-  /* Card */
-  --color-card: oklch(0.99 0.005 80);
-  --color-card-foreground: oklch(0.25 0.05 250);
+  /* Card - a touch lighter than the background */
+  --color-card: #162138;
+  --color-card-foreground: #f1e7d6;
 
   /* Popover */
-  --color-popover: oklch(0.99 0.005 80);
-  --color-popover-foreground: oklch(0.25 0.05 250);
+  --color-popover: #162138;
+  --color-popover-foreground: #f1e7d6;
 
   /* Secondary */
-  --color-secondary: oklch(0.92 0.01 250);
-  --color-secondary-foreground: oklch(0.25 0.05 250);
+  --color-secondary: #22304c;
+  --color-secondary-foreground: #f1e7d6;
 
   /* Border radius */
   --radius-lg: 0.75rem;
   --radius-md: 0.5rem;
   --radius-sm: 0.3rem;
-}
-
-/* Dark mode (optional for future) */
-.dark {
-  --color-background: oklch(0.2 0.03 250);
-  --color-foreground: oklch(0.92 0.01 80);
-  --color-surface: oklch(0.25 0.03 250);
-  --color-border: oklch(0.3 0.03 250);
-  --color-card: oklch(0.22 0.03 250);
-  --color-card-foreground: oklch(0.92 0.01 80);
-  --color-popover: oklch(0.22 0.03 250);
-  --color-popover-foreground: oklch(0.92 0.01 80);
-  --color-muted: oklch(0.28 0.02 250);
-  --color-muted-foreground: oklch(0.65 0.01 250);
 }
 
 /* Base styles */
@@ -77,8 +70,10 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
+  /* Bold, prominent headings (family feedback) */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
+    @apply font-heading font-bold;
+    letter-spacing: 0.01em;
   }
 }
 
@@ -97,7 +92,8 @@
 /* Memorial design components */
 @layer components {
   .memorial-card {
-    @apply bg-card rounded-lg border border-border p-6 md:p-8 shadow-sm;
+    @apply bg-card rounded-lg border border-accent/20 p-6 md:p-8;
+    box-shadow: 0 4px 24px -8px rgb(0 0 0 / 0.5);
   }
 
   /* Decorative gold divider line */

@@ -34,9 +34,17 @@ export function WordsPage() {
                 ״
               </span>
 
+              {entry.title && (
+                <h2 className="font-heading text-2xl md:text-3xl text-primary mb-6">
+                  {entry.title}
+                </h2>
+              )}
+
               <div className="text-lg text-foreground/90 leading-relaxed space-y-4">
                 {entry.paragraphs.map((paragraph, pIndex) => (
-                  <p key={pIndex}>{paragraph}</p>
+                  <p key={pIndex} className="whitespace-pre-line">
+                    {paragraph}
+                  </p>
                 ))}
               </div>
 

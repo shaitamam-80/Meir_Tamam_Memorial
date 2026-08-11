@@ -38,6 +38,8 @@ export interface MemorialWord {
   author: string
   /** קרבה — לדוגמה: 'הבן', 'הנכדה', 'חבר ילדות' */
   relation?: string
-  /** פסקאות הטקסט */
+  /** כותרת אישית למכתב (אופציונלי) */
+  title?: string
+  /** פסקאות הטקסט. אפשר לשבור שורה בתוך פסקה עם \n */
   paragraphs: string[]
 }

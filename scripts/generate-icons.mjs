@@ -60,8 +60,8 @@ function encodePng(width, height, rgba) {
 }
 
 // ---- Scene: memorial candle on navy ----
-const NAVY = [30, 43, 75]
-const GOLD = [201, 169, 98]
+const NAVY = [15, 23, 42]
+const GOLD = [197, 160, 89]
 const CORE = [251, 243, 222]
 const WAX = [239, 232, 216]
 const HOLDER = [138, 112, 64]
