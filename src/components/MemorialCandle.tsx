@@ -1,55 +1,57 @@
+/**
+ * Refined memorial candle — slim ivory taper on a minimal gold base,
+ * with a soft warm glow (redesigned per family feedback).
+ */
 export function MemorialCandle() {
   return (
     <div className="relative">
-      {/* Outer glow */}
+      {/* Soft outer glow */}
       <div
-        className="absolute -inset-12 bg-gradient-radial from-amber-100/40 via-amber-50/10 to-transparent rounded-full animate-pulse"
-        style={{ animationDuration: '4s' }}
+        className="absolute -inset-14 bg-gradient-radial from-amber-200/25 via-amber-100/5 to-transparent rounded-full animate-pulse"
+        style={{ animationDuration: '5s' }}
       />
+      <div className="absolute -inset-6 bg-gradient-radial from-amber-200/30 to-transparent rounded-full animate-candle-glow" />
 
-      {/* Inner glow */}
-      <div className="absolute -inset-6 bg-gradient-radial from-amber-200/50 to-transparent rounded-full animate-candle-glow" />
-
-      <div className="relative">
+      <div className="relative flex flex-col items-center">
         {/* Flame */}
-        <svg className="w-12 h-20 mx-auto animate-flame" viewBox="0 0 48 80" fill="none">
+        <svg className="w-8 h-14 animate-flame" viewBox="0 0 32 56" fill="none">
           <defs>
             <linearGradient id="flameGradient" x1="0%" y1="100%" x2="0%" y2="0%">
-              <stop offset="0%" stopColor="#d97706" />
-              <stop offset="30%" stopColor="#f59e0b" />
-              <stop offset="60%" stopColor="#fbbf24" />
-              <stop offset="100%" stopColor="#fef9c3" />
+              <stop offset="0%" stopColor="#c5741a" />
+              <stop offset="35%" stopColor="#e9a23b" />
+              <stop offset="70%" stopColor="#f7cf6f" />
+              <stop offset="100%" stopColor="#fdf3d0" />
             </linearGradient>
             <filter id="flameGlow">
-              <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+              <feGaussianBlur stdDeviation="1.6" result="blur" />
               <feMerge>
-                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="blur" />
                 <feMergeNode in="SourceGraphic" />
               </feMerge>
             </filter>
           </defs>
 
+          {/* Slender teardrop flame */}
           <path
-            d="M24 0C24 0 4 28 4 52C4 68 12.954 80 24 80C35.046 80 44 68 44 52C44 28 24 0 24 0Z"
+            d="M16 2C16 2 5 20 5 35C5 46 9.9 54 16 54C22.1 54 27 46 27 35C27 20 16 2 16 2Z"
             fill="url(#flameGradient)"
             filter="url(#flameGlow)"
           />
-          <ellipse cx="24" cy="58" rx="8" ry="12" fill="#fffbeb" opacity="0.9" />
-          <ellipse cx="24" cy="60" rx="4" ry="8" fill="#fff" opacity="0.7" />
+          <ellipse cx="16" cy="40" rx="4.5" ry="8" fill="#fffbe9" opacity="0.9" />
         </svg>
 
-        {/* Candle body */}
-        <div className="w-10 h-24 bg-gradient-to-b from-[#faf8f5] via-[#f0ebe0] to-[#e5ddd0] rounded-t-sm mx-auto shadow-md relative overflow-hidden">
-          <div className="absolute top-0 start-1 w-2 h-4 bg-gradient-to-b from-white/60 to-transparent rounded-b-full" />
-          <div className="absolute top-0 end-2 w-1.5 h-3 bg-gradient-to-b from-white/40 to-transparent rounded-b-full" />
+        {/* Wick */}
+        <div className="w-0.5 h-1.5 bg-[#3a2d1a] rounded-full -mt-1" />
+
+        {/* Slim taper candle */}
+        <div className="w-6 h-28 bg-gradient-to-b from-[#faf6ec] via-[#f0e8d6] to-[#e3d7bf] rounded-t-[3px] shadow-md relative overflow-hidden">
+          {/* Subtle wax highlight */}
+          <div className="absolute top-0 bottom-0 start-1 w-1.5 bg-gradient-to-b from-white/70 via-white/20 to-transparent rounded-full" />
         </div>
 
-        {/* Candle holder */}
-        <div className="relative">
-          <div className="w-14 h-3 bg-gradient-to-b from-[#c9a962] via-[#b8963e] to-[#a08040] rounded-t-sm mx-auto" />
-          <div className="w-16 h-2 bg-gradient-to-b from-[#a08040] to-[#7a6030] mx-auto" />
-          <div className="w-20 h-3 bg-gradient-to-b from-[#7a6030] via-[#8a7040] to-[#6a5020] rounded-b-md mx-auto shadow-lg" />
-        </div>
+        {/* Minimal matte-gold base */}
+        <div className="w-10 h-1.5 bg-gradient-to-b from-[#d8b877] to-[#c5a059] rounded-sm" />
+        <div className="w-14 h-1 bg-gradient-to-b from-[#a9884b] to-[#8a6f3c] rounded-b-md" />
       </div>
     </div>
   )
