@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# פלט של npm run photos — דפי בדיקת תמונות מקומיים
+photo-review
+rotations.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

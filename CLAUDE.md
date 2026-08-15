@@ -57,6 +57,7 @@ src/
 └── styles/theme.css # Tailwind v4 theme + memorial CSS (candle animation etc.)
 public/images/       # photo files (pre-optimized)
 scripts/generate-icons.mjs  # regenerates PWA icons (npm run icons)
+scripts/prepare-photos.mjs  # batch-prepares scanned photos (npm run photos)
 .github/workflows/deploy.yml # auto-deploy to GitHub Pages on push to main
 ```
 
@@ -70,6 +71,11 @@ scripts/generate-icons.mjs  # regenerates PWA icons (npm run icons)
 - `npm run lint`: Run linter
 - `npm run preview`: Preview production build
 - `npm run icons`: Regenerate PWA icons
+- `npm run photos -- --in <dir> --out images/<path>`: Batch-prepare scanned
+  photos — EXIF orientation, scanner-border crop, deskew, resize to 1200px,
+  compress under 300KB. Writes a review page to `photo-review/` (gitignored)
+  for the manual 90°/180° rotations the detector can't infer; feed the
+  resulting `rotations.json` back with `--rotations`.
 
 ## Content Editing
 See CONTENT_GUIDE.md (Hebrew) — the guide the family uses to update content.
