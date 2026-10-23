@@ -35,10 +35,15 @@ export function WordsPage() {
               </span>
 
               {entry.title && (
-                <h2 className="font-heading text-2xl md:text-3xl text-primary mb-6">
+                <h2 className="font-heading text-2xl md:text-3xl text-primary mb-3">
                   {entry.title}
                 </h2>
               )}
+
+              <div className="mb-7 flex flex-wrap items-baseline gap-2 text-muted-foreground">
+                <span className="font-heading text-primary">{entry.author}</span>
+                {entry.relation && <span>· {entry.relation}</span>}
+              </div>
 
               <div className="text-lg text-foreground/90 leading-relaxed space-y-4">
                 {entry.paragraphs.map((paragraph, pIndex) => (
@@ -48,13 +53,6 @@ export function WordsPage() {
                 ))}
               </div>
 
-              {/* Author */}
-              <footer className="mt-6 pt-4 border-t border-border flex items-baseline gap-2">
-                <span className="font-heading text-primary">{entry.author}</span>
-                {entry.relation && (
-                  <span className="text-muted-foreground text-sm">· {entry.relation}</span>
-                )}
-              </footer>
             </article>
           ))}
         </div>

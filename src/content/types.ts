@@ -2,6 +2,9 @@
 export interface Photo {
   /** נתיב יחסי בתוך public/ — לדוגמה: 'images/story/childhood-1.jpg' */
   src: string
+  thumbnail?: string
+  width?: number
+  height?: number
   /** כיתוב שיוצג מתחת לתמונה */
   caption?: string
 }

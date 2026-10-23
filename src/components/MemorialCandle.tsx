@@ -2,19 +2,19 @@
  * Refined memorial candle — slim ivory taper on a minimal gold base,
  * with a soft warm glow (redesigned per family feedback).
  */
-export function MemorialCandle() {
+export function MemorialCandle({ compact = false }: { compact?: boolean }) {
   return (
     <div className="relative">
       {/* Soft outer glow */}
       <div
-        className="absolute -inset-14 bg-gradient-radial from-amber-200/25 via-amber-100/5 to-transparent rounded-full animate-pulse"
+        className="absolute -inset-14 bg-gradient-radial from-amber-200/25 via-amber-100/5 to-transparent rounded-full motion-safe:animate-pulse"
         style={{ animationDuration: '5s' }}
       />
       <div className="absolute -inset-6 bg-gradient-radial from-amber-200/30 to-transparent rounded-full animate-candle-glow" />
 
       <div className="relative flex flex-col items-center">
         {/* Flame */}
-        <svg className="w-8 h-14 animate-flame" viewBox="0 0 32 56" fill="none">
+        <svg className={`${compact ? 'w-4 h-7' : 'w-8 h-14'} animate-flame`} viewBox="0 0 32 56" fill="none" aria-hidden="true">
           <defs>
             <linearGradient id="flameGradient" x1="0%" y1="100%" x2="0%" y2="0%">
               <stop offset="0%" stopColor="#c5741a" />
@@ -44,14 +44,14 @@ export function MemorialCandle() {
         <div className="w-0.5 h-1.5 bg-[#3a2d1a] rounded-full -mt-1" />
 
         {/* Slim taper candle */}
-        <div className="w-6 h-28 bg-gradient-to-b from-[#faf6ec] via-[#f0e8d6] to-[#e3d7bf] rounded-t-[3px] shadow-md relative overflow-hidden">
+        <div className={`${compact ? 'w-3 h-12' : 'w-6 h-28'} bg-gradient-to-b from-[#faf6ec] via-[#f0e8d6] to-[#e3d7bf] rounded-t-[3px] shadow-md relative overflow-hidden`}>
           {/* Subtle wax highlight */}
           <div className="absolute top-0 bottom-0 start-1 w-1.5 bg-gradient-to-b from-white/70 via-white/20 to-transparent rounded-full" />
         </div>
 
         {/* Minimal matte-gold base */}
-        <div className="w-10 h-1.5 bg-gradient-to-b from-[#d8b877] to-[#c5a059] rounded-sm" />
-        <div className="w-14 h-1 bg-gradient-to-b from-[#a9884b] to-[#8a6f3c] rounded-b-md" />
+        <div className={`${compact ? 'w-5' : 'w-10'} h-1.5 bg-gradient-to-b from-[#d8b877] to-[#c5a059] rounded-sm`} />
+        <div className={`${compact ? 'w-7' : 'w-14'} h-1 bg-gradient-to-b from-[#a9884b] to-[#8a6f3c] rounded-b-md`} />
       </div>
     </div>
   )

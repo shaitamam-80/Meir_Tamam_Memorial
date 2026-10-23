@@ -21,10 +21,11 @@ function ScrollToTop() {
 export function Layout() {
   return (
     <div className="min-h-screen bg-background">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:start-3 focus:z-[110] focus:rounded-lg focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-3">דלג לתוכן</a>
       <ScrollToTop />
 
       {/* Page content — bottom padding leaves room for the fixed nav */}
-      <main className="pb-24">
+      <main id="main-content" tabIndex={-1} className="pb-24">
         <Outlet />
       </main>
 

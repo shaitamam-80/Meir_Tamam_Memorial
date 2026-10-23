@@ -10,6 +10,8 @@ function StoryFigure({ image }: { image: Photo }) {
         src={asset(image.src)}
         alt={image.caption ?? ''}
         loading="lazy"
+        width={image.width}
+        height={image.height}
         className="w-full rounded-lg border border-accent/20 shadow-sm"
       />
       {image.caption && (
