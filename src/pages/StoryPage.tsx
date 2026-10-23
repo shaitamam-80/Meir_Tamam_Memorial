@@ -49,7 +49,7 @@ function Chapter({ chapter, index }: { chapter: StoryChapter; index: number }) {
       <div className="text-lg text-foreground/90 leading-relaxed">
         {paragraphs.map((paragraph, pIndex) => (
           <div key={pIndex}>
-            <p className="mb-4 last:mb-0">{paragraph}</p>
+            <p className="mb-4 last:mb-0 max-w-[65ch]">{paragraph}</p>
             {images.map(
               (image, imgIndex) =>
                 imageAfterParagraph(imgIndex) === pIndex && (
