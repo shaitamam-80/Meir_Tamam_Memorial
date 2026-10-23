@@ -1,4 +1,5 @@
 import type { StoryChapter } from './types'
+import { photos } from './photos'
 
 /**
  * סיפור החיים — פרקים כרונולוגיים.
@@ -25,7 +26,7 @@ export const storyChapters: StoryChapter[] = [
         'כשהוא סופג את ערכי העבודה והמסחר מאביו בחנות המכולת המשפחתית.',
     ],
     images: [
-      { src: 'images/placeholder-photo.svg', caption: 'כאן תבוא תמונת ילדות — החליפו אותי' },
+      photos.YO001,
     ],
   },
   {
@@ -38,7 +39,8 @@ export const storyChapters: StoryChapter[] = [
         'מאיר היה אבא שקט, נוכח ומסור, שידע לתת לכל ילד את המקום שלו ואת הביטחון שתמיד יש על מי לסמוך.',
     ],
     images: [
-      { src: 'images/placeholder-photo.svg', caption: 'כאן תבוא תמונה מהחתונה — החליפו אותי' },
+      photos.WD012,
+      photos.SF001,
     ],
   },
   {
@@ -59,7 +61,7 @@ export const storyChapters: StoryChapter[] = [
       'את הנכדה התשיעית לא זכה להכיר — אך שמו, סיפורו והאהבה שהשאיר אחריו ילוו גם אותה לאורך כל חייה.',
     ],
     images: [
-      { src: 'images/placeholder-photo.svg', caption: 'כאן תבוא תמונה עם הנכדים — החליפו אותי' },
+      photos.CH017,
     ],
   },
 ]

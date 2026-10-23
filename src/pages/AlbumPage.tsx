@@ -61,9 +61,11 @@ export function AlbumPage() {
               style={{ animationDelay: `${index * 60}ms` }}
             >
               <img
-                src={asset(photo.src)}
+                src={asset(photo.thumbnail ?? photo.src)}
                 alt={photo.caption ?? ''}
                 loading="lazy"
+                width={photo.width}
+                height={photo.height}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </button>

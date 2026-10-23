@@ -6,8 +6,11 @@ export const profile = {
   years: '1952–2026',
   birthDetails: 'נולד בי׳ בדצמבר 1952, נבל, תוניסיה',
 
-  /** תמונת הפרופיל בדף הבית — החליפו את הקובץ ב-public/images/profile.jpg */
-  photo: 'images/profile.svg',
+  photo: 'images/memorial/tr022.webp',
+  photoAlt: 'חיוך וחיבוק ליד השולחן, מתוך האלבום המשפחתי',
+  introduction: 'אבא, סבא ואיש של שקט, חיוך ואהבת אדם.',
+  familyQuote: 'אבא היה המקום הבטוח שלי.',
+  quoteAuthor: 'אסתי, בתו',
 
   /** משפט קצר שמזוהה איתו */
   tagline: '״החיוך השקט שניצח הכל״',
