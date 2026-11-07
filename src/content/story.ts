@@ -64,6 +64,7 @@ export const storyChapters: StoryChapter[] = [
     ],
     images: [
       photos.CH017,
+      photos.ELLA,
     ],
   },
 ]

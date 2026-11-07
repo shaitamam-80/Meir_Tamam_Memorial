@@ -1,5 +1,8 @@
 import { memorialWords } from '@/content/words'
 
+/** How many paragraphs of each letter show before "continue reading". */
+const PREVIEW_PARAGRAPHS = 4
+
 export function WordsPage() {
   return (
     <div className="relative">
@@ -22,7 +25,7 @@ export function WordsPage() {
 
       {/* Entries */}
       <section className="py-8 px-4">
-        <div className="max-w-3xl mx-auto space-y-8">
+        <div className="max-w-3xl mx-auto space-y-6">
           {memorialWords.map((entry, index) => (
             <article
               key={index}
@@ -40,19 +43,31 @@ export function WordsPage() {
                 </h2>
               )}
 
-              <div className="mb-7 flex flex-wrap items-baseline gap-2 text-muted-foreground">
-                <span className="font-heading text-primary">{entry.author}</span>
-                {entry.relation && <span>· {entry.relation}</span>}
+              <div className="mb-5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <span className="font-heading text-xl md:text-2xl font-semibold text-foreground">{entry.author}</span>
+                {entry.relation && <span className="text-lg text-muted-foreground">{entry.relation}</span>}
               </div>
 
-              <div className="text-lg text-foreground/90 leading-relaxed space-y-4">
-                {entry.paragraphs.map((paragraph, pIndex) => (
-                  <p key={pIndex} className="whitespace-pre-line">
-                    {paragraph}
-                  </p>
+              <div className="text-lg text-foreground/90 leading-relaxed space-y-3">
+                {entry.paragraphs.slice(0, PREVIEW_PARAGRAPHS).map((paragraph, pIndex) => (
+                  <p key={pIndex} className="whitespace-pre-line">{paragraph}</p>
                 ))}
               </div>
 
+              {/* Long letters fold after a short opening, so many stories fit on the page. */}
+              {entry.paragraphs.length > PREVIEW_PARAGRAPHS && (
+                <details className="group mt-3">
+                  <summary className="list-none [&::-webkit-details-marker]:hidden inline-flex items-center gap-1 cursor-pointer text-primary font-semibold py-2 underline underline-offset-4 decoration-accent/50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring">
+                    <span className="group-open:hidden">להמשך הקריאה</span>
+                    <span className="hidden group-open:inline">הסתרה</span>
+                  </summary>
+                  <div className="mt-3 text-lg text-foreground/90 leading-relaxed space-y-3">
+                    {entry.paragraphs.slice(PREVIEW_PARAGRAPHS).map((paragraph, pIndex) => (
+                      <p key={pIndex} className="whitespace-pre-line">{paragraph}</p>
+                    ))}
+                  </div>
+                </details>
+              )}
             </article>
           ))}
         </div>

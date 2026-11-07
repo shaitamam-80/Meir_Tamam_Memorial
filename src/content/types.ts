@@ -7,6 +7,8 @@ export interface Photo {
   height?: number
   /** טקסט חלופי לנגישות (alt). לא מוצג מתחת לתמונה — באתר אין כיתובים, רק שם האלבום. */
   caption?: string
+  /** סרטון (נתיב בתוך public/). כשקיים — src/thumbnail הם תמונת הפתיחה שלו */
+  video?: string
 }
 
 /** פרק בסיפור החיים */

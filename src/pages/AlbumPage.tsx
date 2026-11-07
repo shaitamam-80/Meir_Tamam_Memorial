@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { ChevronRight } from 'lucide-react'
+import { ChevronRight, Play } from 'lucide-react'
 import { albums } from '@/content/gallery'
 import { asset } from '@/lib/assets'
 import { Lightbox } from '@/components/Lightbox'
@@ -20,6 +20,10 @@ export function AlbumPage() {
       </div>
     )
   }
+
+  // An album that opens with a video shows it as a large player; the rest go in the grid.
+  const featured = album.photos[0]?.video ? album.photos[0] : null
+  const gridItems = featured ? album.photos.slice(1) : album.photos
 
   return (
     <div className="relative">
@@ -49,15 +53,31 @@ export function AlbumPage() {
         </div>
       </section>
 
+      {featured?.video && (
+        <section className="px-4 pb-6">
+          <video
+            src={asset(featured.video)} poster={asset(featured.src)}
+            controls playsInline preload="none"
+            width={featured.width} height={featured.height}
+            aria-label={featured.caption ?? 'סרטון'}
+            className="block mx-auto max-w-full h-auto rounded-xl border border-accent/25 bg-black shadow-warm-lg"
+            style={{
+              aspectRatio: `${featured.width} / ${featured.height}`,
+              width: `min(100%, 56rem, calc(75svh * ${featured.width} / ${featured.height}))`,
+            }}
+          />
+        </section>
+      )}
+
       {/* Photo grid */}
       <section className="py-4 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-3">
-          {album.photos.map((photo, index) => (
+          {gridItems.map((photo, index) => (
             <button
               key={index}
               onClick={() => setLightboxIndex(index)}
-              aria-label={photo.caption ?? `תמונה ${index + 1}`}
-              className="group aspect-square overflow-hidden rounded-lg border border-border bg-surface animate-fade-in-up focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+              aria-label={photo.video ? `סרטון: ${photo.caption ?? index + 1}` : (photo.caption ?? `תמונה ${index + 1}`)}
+              className="group relative aspect-square overflow-hidden rounded-lg border border-border bg-surface animate-fade-in-up focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
               style={{ animationDelay: `${index * 60}ms` }}
             >
               <img
@@ -68,6 +88,13 @@ export function AlbumPage() {
                 height={photo.height}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
+              {photo.video && (
+                <span className="absolute inset-0 flex items-center justify-center bg-black/15 pointer-events-none">
+                  <span className="flex items-center justify-center w-14 h-14 rounded-full bg-black/55 text-white">
+                    <Play className="w-7 h-7 ms-1" fill="currentColor" aria-hidden="true" />
+                  </span>
+                </span>
+              )}
             </button>
           ))}
         </div>
@@ -76,7 +103,7 @@ export function AlbumPage() {
       {/* Lightbox */}
       {lightboxIndex !== null && (
         <Lightbox
-          photos={album.photos}
+          photos={gridItems}
           index={lightboxIndex}
           onClose={() => setLightboxIndex(null)}
           onNavigate={setLightboxIndex}
