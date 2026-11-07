@@ -21,7 +21,7 @@ export const albums: Album[] = [
   {
     id: 'building-home', title: 'בונים בית',
     cover: photos.SF001.thumbnail,
-    photos: pick('SF001', 'SF005', 'SF003', 'SF004', 'TR076', 'SF007', 'M006', 'M026', 'M024', 'M009', 'M029', 'M002', 'P274', 'P277', 'P279', 'P280', 'P281', 'P284'),
+    photos: pick('V_HOME', 'SF001', 'SF005', 'SF003', 'SF004', 'TR076', 'SF007', 'M006', 'M026', 'M024', 'M009', 'M029', 'M002', 'P274', 'P277', 'P279', 'P280', 'P281', 'P284'),
   },
   {
     id: 'family', title: 'הבית והמשפחה',
