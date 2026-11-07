@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { BookOpen, Camera, Heart, Play } from 'lucide-react'
 import { MemorialCandle } from '@/components/MemorialCandle'
+import { InstallHint } from '@/components/InstallHint'
 import { profile } from '@/content/profile'
 import { asset } from '@/lib/assets'
 
@@ -72,6 +73,8 @@ export function HomePage() {
         <p className="font-heading text-xl text-primary whitespace-pre-line leading-relaxed">{profile.closingQuote}</p>
         <p className="text-muted-foreground mt-6 text-sm">{profile.scripture.text}<span className="block mt-1">{profile.scripture.source}</span></p>
       </section>
+
+      <InstallHint />
     </div>
   )
 }
