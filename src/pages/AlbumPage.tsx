@@ -21,6 +21,10 @@ export function AlbumPage() {
     )
   }
 
+  // An album that opens with a video shows it as a large player; the rest go in the grid.
+  const featured = album.photos[0]?.video ? album.photos[0] : null
+  const gridItems = featured ? album.photos.slice(1) : album.photos
+
   return (
     <div className="relative">
       {/* Hero */}
@@ -49,10 +53,26 @@ export function AlbumPage() {
         </div>
       </section>
 
+      {featured?.video && (
+        <section className="px-4 pb-6">
+          <video
+            src={asset(featured.video)} poster={asset(featured.src)}
+            controls playsInline preload="none"
+            width={featured.width} height={featured.height}
+            aria-label={featured.caption ?? 'סרטון'}
+            className="block mx-auto max-w-full h-auto rounded-xl border border-accent/25 bg-black shadow-warm-lg"
+            style={{
+              aspectRatio: `${featured.width} / ${featured.height}`,
+              width: `min(100%, 56rem, calc(75svh * ${featured.width} / ${featured.height}))`,
+            }}
+          />
+        </section>
+      )}
+
       {/* Photo grid */}
       <section className="py-4 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-3">
-          {album.photos.map((photo, index) => (
+          {gridItems.map((photo, index) => (
             <button
               key={index}
               onClick={() => setLightboxIndex(index)}
@@ -83,7 +103,7 @@ export function AlbumPage() {
       {/* Lightbox */}
       {lightboxIndex !== null && (
         <Lightbox
-          photos={album.photos}
+          photos={gridItems}
           index={lightboxIndex}
           onClose={() => setLightboxIndex(null)}
           onNavigate={setLightboxIndex}
