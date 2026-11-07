@@ -43,9 +43,9 @@ export function WordsPage() {
                 </h2>
               )}
 
-              <div className="mb-5 flex flex-wrap items-baseline gap-2 text-muted-foreground">
-                <span className="font-heading text-primary">{entry.author}</span>
-                {entry.relation && <span>· {entry.relation}</span>}
+              <div className="mb-5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <span className="font-heading text-xl md:text-2xl font-semibold text-foreground">{entry.author}</span>
+                {entry.relation && <span className="text-lg text-muted-foreground">{entry.relation}</span>}
               </div>
 
               <div className="text-lg text-foreground/90 leading-relaxed space-y-3">
