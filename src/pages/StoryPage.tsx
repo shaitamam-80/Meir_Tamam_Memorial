@@ -78,7 +78,7 @@ function Timeline() {
               <div className="memorial-card md:max-w-md md:ms-auto md:me-0">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="md:hidden inline-flex items-center justify-center px-3 h-8 bg-surface text-primary font-heading text-sm rounded-full border border-accent/30 shrink-0">
-                    {event.year}
+                    <bdi>{event.year}</bdi>
                   </span>
                   <h3 className="font-heading text-xl text-primary">{event.title}</h3>
                 </div>
@@ -91,7 +91,7 @@ function Timeline() {
             <div className="hidden md:flex flex-col items-center z-10">
               <div className="w-4 h-4 rounded-full bg-accent shadow-lg ring-4 ring-background" />
               <div className="mt-2 px-4 py-1 bg-surface rounded-full border border-accent/20">
-                <span className="font-heading text-primary">{event.year}</span>
+                <span className="font-heading text-primary"><bdi>{event.year}</bdi></span>
               </div>
             </div>
 
