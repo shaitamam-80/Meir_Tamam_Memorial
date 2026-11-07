@@ -45,4 +45,4 @@ npm run build
 npm run preview -- --host 127.0.0.1 --port 4179 --strictPort
 ```
 
-The visual draft lives at `public/media/memorial-film.mp4`. Family source-path manifests and intermediate media processing remain outside the repository.
+The memorial films live at `public/media/memorial-youth.mp4` and `public/media/memorial-wedding.mp4` (720p, compressed from the masters in `C:/Dev/video-studio/memorial`). Family source-path manifests and intermediate media processing remain outside the repository.
