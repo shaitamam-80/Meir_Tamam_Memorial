@@ -39,7 +39,7 @@ export const storyChapters: StoryChapter[] = [
         'מאיר היה אבא שקט, נוכח ומסור, שידע לתת לכל ילד את המקום שלו ואת הביטחון שתמיד יש על מי לסמוך.',
     ],
     images: [
-      photos.WD012,
+      photos.W013,
       photos.SF001,
     ],
   },
@@ -50,7 +50,9 @@ export const storyChapters: StoryChapter[] = [
       'בשנת 2014 עבר מאיר דום לב. נס ההצלה והשיקום הארוך היו נקודת מפנה בחייו – ' +
         'מאז בחר לחיות כל יום כמתנה, ולהחזיר טובה לעולם דרך נתינה והתנדבות.',
     ],
-    images: [],
+    images: [
+      photos.LF001,
+    ],
   },
   {
     id: 'saba',

@@ -74,7 +74,6 @@ export function Lightbox({ photos, index, onClose, onNavigate }: LightboxProps) 
           <img src={asset(photo.src)} alt={photo.caption ?? ''} className="max-h-full max-w-full object-contain" />
         </div>
         <div className="px-4 pt-4 pb-6 pb-safe text-center">
-          {photo.caption && <p className="mb-4 text-sm md:text-base leading-relaxed" aria-live="polite">{photo.caption}</p>}
           {photos.length > 1 && (
             <div className="flex items-center justify-center gap-8">
               <button type="button" onClick={goPrev} aria-label="התמונה הקודמת" className="p-3 rounded-full bg-white/10 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-ring"><ChevronRight className="w-6 h-6" aria-hidden="true" /></button>

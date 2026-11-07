@@ -14,11 +14,6 @@ function StoryFigure({ image }: { image: Photo }) {
         height={image.height}
         className="w-full rounded-lg border border-accent/20 shadow-sm"
       />
-      {image.caption && (
-        <figcaption className="text-center text-sm text-muted-foreground mt-2">
-          {image.caption}
-        </figcaption>
-      )}
     </figure>
   )
 }
