@@ -1,6 +1,7 @@
 import type { Photo } from './types'
 
 export const photos = {
+  "ELLA": {"src": "images/memorial/ella.webp", "thumbnail": "images/memorial/ella-480.webp", "width": 1026, "height": 1026, "caption": "הנכדה התשיעית"},
   "V_HOME": {"src": "images/memorial/v-home.webp", "thumbnail": "images/memorial/v-home-480.webp", "width": 1280, "height": 720, "caption": "סרט בונים בית", "video": "media/memorial-home.mp4"},
   "V_INTERVIEW": {"src": "images/memorial/v-interview.webp", "thumbnail": "images/memorial/v-interview-480.webp", "width": 675, "height": 1200, "caption": "ראיון עם סבא מאיר", "video": "media/v-interview.mp4"},
   "V_DANCE_TODDLER": {"src": "images/memorial/v-dance-toddler.webp", "thumbnail": "images/memorial/v-dance-toddler-480.webp", "width": 540, "height": 540, "caption": "סבא רוקד עם הנכדה", "video": "media/v-dance-toddler.mp4"},
