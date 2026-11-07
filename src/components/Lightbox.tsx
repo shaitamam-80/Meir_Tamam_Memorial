@@ -71,7 +71,15 @@ export function Lightbox({ photos, index, onClose, onNavigate }: LightboxProps) 
             else goPrev()
           }}
         >
-          <img src={asset(photo.src)} alt={photo.caption ?? ''} className="max-h-full max-w-full object-contain" />
+          {photo.video ? (
+            <video
+              key={photo.video} src={asset(photo.video)} poster={asset(photo.src)}
+              controls autoPlay playsInline preload="metadata" aria-label={photo.caption ?? 'סרטון'}
+              className="max-h-full max-w-full object-contain"
+            />
+          ) : (
+            <img src={asset(photo.src)} alt={photo.caption ?? ''} className="max-h-full max-w-full object-contain" />
+          )}
         </div>
         <div className="px-4 pt-4 pb-6 pb-safe text-center">
           {photos.length > 1 && (

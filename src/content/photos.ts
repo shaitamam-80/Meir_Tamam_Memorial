@@ -1,6 +1,18 @@
 import type { Photo } from './types'
 
 export const photos = {
+  "V_INTERVIEW": {"src": "images/memorial/v-interview.webp", "thumbnail": "images/memorial/v-interview-480.webp", "width": 675, "height": 1200, "caption": "ראיון עם סבא מאיר", "video": "media/v-interview.mp4"},
+  "V_DANCE_TODDLER": {"src": "images/memorial/v-dance-toddler.webp", "thumbnail": "images/memorial/v-dance-toddler-480.webp", "width": 540, "height": 540, "caption": "סבא רוקד עם הנכדה", "video": "media/v-dance-toddler.mp4"},
+  "V_WALKER": {"src": "images/memorial/v-walker.webp", "thumbnail": "images/memorial/v-walker-480.webp", "width": 675, "height": 1200, "caption": "צעדים ראשונים", "video": "media/v-walker.mp4"},
+  "V_BIRTHDAY_2016": {"src": "images/memorial/v-birthday-2016.webp", "thumbnail": "images/memorial/v-birthday-2016-480.webp", "width": 675, "height": 1200, "caption": "יום הולדת עם הנכדים", "video": "media/v-birthday-2016.mp4"},
+  "V_HOLDING_BABY": {"src": "images/memorial/v-holding-baby.webp", "thumbnail": "images/memorial/v-holding-baby-480.webp", "width": 720, "height": 960, "caption": "סבא עם נכדה על הידיים", "video": "media/v-holding-baby.mp4"},
+  "V_EVENT_DANCE_2016": {"src": "images/memorial/v-event-dance-2016.webp", "thumbnail": "images/memorial/v-event-dance-2016-480.webp", "width": 675, "height": 1200, "caption": "ריקודים בשמחה משפחתית", "video": "media/v-event-dance-2016.mp4"},
+  "V_WEDDING_DANCE_2018": {"src": "images/memorial/v-wedding-dance-2018.webp", "thumbnail": "images/memorial/v-wedding-dance-2018-480.webp", "width": 675, "height": 1200, "caption": "ריקודים בחתונה", "video": "media/v-wedding-dance-2018.mp4"},
+  "V_BIRTHDAY_2019": {"src": "images/memorial/v-birthday-2019.webp", "thumbnail": "images/memorial/v-birthday-2019-480.webp", "width": 675, "height": 1200, "caption": "ריקוד ביום הולדת", "video": "media/v-birthday-2019.mp4"},
+  "V_LAUGHING_2022": {"src": "images/memorial/v-laughing-2022.webp", "thumbnail": "images/memorial/v-laughing-2022-480.webp", "width": 660, "height": 1200, "caption": "מאיר צוחק", "video": "media/v-laughing-2022.mp4"},
+  "V_SMILING_2023": {"src": "images/memorial/v-smiling-2023.webp", "thumbnail": "images/memorial/v-smiling-2023-480.webp", "width": 675, "height": 1200, "caption": "מאיר מחייך", "video": "media/v-smiling-2023.mp4"},
+  "V_YOUTH": {"src": "images/memorial/v-youth.webp", "thumbnail": "images/memorial/v-youth-480.webp", "width": 1200, "height": 675, "caption": "סרט הנעורים", "video": "media/memorial-youth.mp4"},
+  "V_WEDDING": {"src": "images/memorial/v-wedding.webp", "thumbnail": "images/memorial/v-wedding-480.webp", "width": 1200, "height": 675, "caption": "סרט החתונה", "video": "media/memorial-wedding.mp4"},
   "M003": {"src": "images/memorial/m003.webp", "thumbnail": "images/memorial/m003-480.webp", "width": 1200, "height": 857, "caption": "מאיר תמם בצעירותו"},
   "M005": {"src": "images/memorial/m005.webp", "thumbnail": "images/memorial/m005-480.webp", "width": 844, "height": 1200, "caption": "מאיר תמם בצעירותו"},
   "M008": {"src": "images/memorial/m008.webp", "thumbnail": "images/memorial/m008-480.webp", "width": 835, "height": 1200, "caption": "מאיר תמם בצעירותו"},

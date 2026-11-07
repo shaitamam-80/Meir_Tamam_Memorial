@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { BookOpen, Camera, Heart, Play } from 'lucide-react'
 import { MemorialCandle } from '@/components/MemorialCandle'
-import { MemorialFilm } from '@/components/MemorialFilm'
 import { profile } from '@/content/profile'
 import { asset } from '@/lib/assets'
 
@@ -23,13 +22,13 @@ export function HomePage() {
             </h1>
             <p className="text-muted-foreground text-xl mt-3"><bdi dir="ltr">{profile.years}</bdi></p>
             <p className="text-lg text-foreground/90 mt-5 leading-relaxed">{profile.introduction}</p>
-            <a
-              href="#memorial-film"
+            <Link
+              to="/gallery"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 mt-5 font-semibold focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
             >
               <Play className="w-5 h-5" aria-hidden="true" />
-              לצפייה בסרטים לזכרו
-            </a>
+              לסרטים ולתמונות
+            </Link>
           </div>
           <figure className="overflow-hidden rounded-2xl border border-accent/25 shadow-warm-lg bg-surface">
             <img
@@ -52,8 +51,6 @@ export function HomePage() {
           <p className="text-lg text-foreground/90 leading-relaxed">{profile.shortBio}</p>
         </div>
       </section>
-
-      <MemorialFilm />
 
       <section className="px-4 py-12 md:py-16">
         <div className="max-w-5xl mx-auto">
