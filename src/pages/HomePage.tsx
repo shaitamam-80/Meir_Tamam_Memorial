@@ -28,7 +28,7 @@ export function HomePage() {
               className="inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 mt-5 font-semibold focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
             >
               <Play className="w-5 h-5" aria-hidden="true" />
-              לצפייה בסרט לזכרו
+              לצפייה בסרטים לזכרו
             </a>
           </div>
           <figure className="overflow-hidden rounded-2xl border border-accent/25 shadow-warm-lg bg-surface">
