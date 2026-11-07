@@ -4,7 +4,7 @@
 Hebrew RTL memorial website for Meir Tamam z"l. Fully static PWA —
 no backend, no database, no auth. Primary access: QR code scan at cemetery.
 Content lives in TypeScript files under `src/content/`; family edits + git push
-trigger automatic deployment to GitHub Pages.
+to `main` trigger automatic deployment on Vercel.
 
 ## Stack
 - React 19 + TypeScript + Vite
@@ -12,7 +12,7 @@ trigger automatic deployment to GitHub Pages.
 - React Router v7
 - vite-plugin-pwa (offline support, installable)
 - lucide-react (icons)
-- Hosted on GitHub Pages (base path `/Meir_Tamam_Memorial/`)
+- Hosted on Vercel at https://meir.shaitamam.com (base path `/`)
 
 ## RTL Rules (CRITICAL)
 - Always use logical properties: ps-*, pe-*, ms-*, me-*, start-*, end-*
@@ -57,7 +57,7 @@ src/
 └── styles/theme.css # Tailwind v4 theme + memorial CSS (candle animation etc.)
 public/images/       # photo files (pre-optimized)
 scripts/generate-icons.mjs  # regenerates PWA icons (npm run icons)
-.github/workflows/deploy.yml # auto-deploy to GitHub Pages on push to main
+print/qr-meir-shaitamam-com.*  # QR code print files for the headstone
 ```
 
 ## Routes
@@ -78,11 +78,11 @@ pre-optimized (squoosh.app, 1200px max), paths relative to public/ resolved
 via `asset()` from `src/lib/assets.ts`.
 
 ## Deployment
-Two supported targets (both work from the same code; QR points at whichever is live):
-- **GitHub Pages**: push to `main` → GitHub Actions deploys.
-  One-time setup: Settings → Pages → Source → GitHub Actions.
-  URL: https://<user>.github.io/Meir_Tamam_Memorial/
-- **Vercel**: import the repo at vercel.com → auto-deploys on every push.
-  Vercel sets the VERCEL env var, so vite.config.ts switches base to `/`;
-  vercel.json handles the SPA rewrite. Custom domain configurable in Vercel.
+- **Vercel** (project `meir-tamam-memorial`): auto-deploys on every push to `main`.
+  vercel.json handles the SPA rewrite.
+- **Permanent address: https://meir.shaitamam.com** — subdomain of shaitamam.com
+  (DNS at GoDaddy: CNAME `meir` → Vercel). This address is engraved on the
+  headstone as a QR code. NEVER change it, and keep shaitamam.com renewing.
+- `meir-tamam-memorial.vercel.app` remains as a secondary address.
+
 ```

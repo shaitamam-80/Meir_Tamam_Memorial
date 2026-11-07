@@ -4,10 +4,10 @@ import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import path from 'path'
 
-// GitHub Pages serves the site from /<repo-name>/; Vercel serves from the root.
-// Vercel sets the VERCEL env var automatically during its builds.
-const BASE = process.env.VERCEL ? '/' : '/Meir_Tamam_Memorial/'
-const publicSiteUrl = new URL(process.env.VITE_PUBLIC_SITE_URL || 'https://meir-tamam-memorial.vercel.app/')
+// Hosted on Vercel at the site root. The permanent address below is the one
+// printed as a QR code on the headstone — never change it.
+const BASE = '/'
+const publicSiteUrl = new URL(process.env.VITE_PUBLIC_SITE_URL || 'https://meir.shaitamam.com/')
 if (publicSiteUrl.protocol !== 'https:') throw new Error('VITE_PUBLIC_SITE_URL must use HTTPS')
 publicSiteUrl.search = ''
 publicSiteUrl.hash = ''

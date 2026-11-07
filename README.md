@@ -1,45 +1,15 @@
-# Meir Tamam Memorial Website
+# אתר הנצחה — מאיר תמם ז״ל
 
-A Hebrew (RTL) memorial website designed to be accessed via QR code at a cemetery.
+אתר הנצחה סטטי (PWA) בעברית, שנכנסים אליו דרך קוד QR שעל המצבה.
 
-## Features
+**כתובת קבועה:** https://meir.shaitamam.com — מוטבעת ב-QR, אין לשנות.
 
-- **Public Pages**: Home, Biography/Timeline, Photo Gallery, Recipe Book, Memory Wall
-- **Admin Panel**: Content management for family members
-- **Optimized for Cemetery Use**: High contrast, minimal data usage, fast loading
+- תוכן האתר: `src/content/` — הוראות עריכה ב-[CONTENT_GUIDE.md](CONTENT_GUIDE.md)
+- קובצי QR לדפוס: `print/`
+- פריסה: Vercel, אוטומטית בכל push ל-`main`
 
-## Tech Stack
-
-- React 19 + TypeScript + Vite
-- Tailwind CSS v4
-- Supabase (Auth, Database, Storage)
-- shadcn/ui components
-- React Query, React Hook Form, Zod
-
-## Getting Started
-
-1. Clone the repository
-2. Copy `.env.example` to `.env.local` and fill in your Supabase credentials
-3. Install dependencies: `npm install`
-4. Start development server: `npm run dev`
-
-## Environment Variables
-
+```bash
+npm install
+npm run dev
+npm run build
 ```
-VITE_SUPABASE_URL=your_supabase_project_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-```
-
-## Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run lint` - Run ESLint
-- `npm run preview` - Preview production build
-
-## Design Considerations
-
-This site is designed for use in cemetery environments:
-- High contrast colors for outdoor visibility
-- Minimal data usage for poor cellular reception
-- Simple, emotional-state-friendly UI

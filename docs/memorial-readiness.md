@@ -32,7 +32,7 @@ The family authorized publishing and merging the current version on 23 October 2
 2. Receive the chosen soundtrack and make the final edit. Original video audio has not been reviewed for inclusion.
 3. Export the final ceremony file from the original media at the required projection resolution, and test playback on the actual equipment.
 4. Verify the merged release on the public Vercel address. Publication and merge of this version are authorized; the permanent domain is still pending.
-5. Connect the family's permanent domain. Set `VITE_PUBLIC_SITE_URL` to its full HTTPS address and rebuild so sharing metadata uses the permanent address.
+5. Permanent address chosen: https://meir.shaitamam.com (subdomain of shaitamam.com, DNS at GoDaddy). It is the default in vite.config.ts; no env var needed.
 6. Generate the final QR only after the permanent address is live, then test the supplier's physical proof using multiple phones before producing the metal plaque.
 
 ## Local review
