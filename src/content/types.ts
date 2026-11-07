@@ -5,7 +5,7 @@ export interface Photo {
   thumbnail?: string
   width?: number
   height?: number
-  /** כיתוב שיוצג מתחת לתמונה */
+  /** טקסט חלופי לנגישות (alt). לא מוצג מתחת לתמונה — באתר אין כיתובים, רק שם האלבום. */
   caption?: string
 }
 
