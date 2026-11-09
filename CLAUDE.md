@@ -57,7 +57,7 @@ src/
 └── styles/theme.css # Tailwind v4 theme + memorial CSS (candle animation etc.)
 public/images/       # photo files (pre-optimized)
 scripts/generate-icons.mjs  # regenerates PWA icons (npm run icons)
-print/qr-meir-shaitamam-com.*  # QR code print files for the headstone
+print/                         # headstone QR + plaque print files (SVG/PDF)
 ```
 
 ## Routes
